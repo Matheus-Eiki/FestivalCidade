@@ -4,10 +4,26 @@ namespace Sistema
 {
 	class Sistema
 	{
-		public string NomeFa;
-		public int Dias;
-		public double PontosFidelidade;
-		public string CupomDesconto;
+		public string NomeFa { get; set; } = string.Empty;
+		public int Dias { get; set; }
+		public double PontosFidelidade { get; set; }
+		public string CupomDesconto { get; set; }
 
+		public double CalcularCustoBruto()
+		{
+			double Taxa = 15;
+			double CustoDia = 120;
+			return Dias * CustoDia + Taxa;
+		}
+		public double CalcularDesconto()
+		{
+			if (CupomDesconto == "ROCK10")
+			{
+				return CalcularCustoBruto() - (CalcularCustoBruto() * 0.1);
+			}
+			else 
+			{ 
+				return CalcularCustoBruto()
+			}
 	}
 }
