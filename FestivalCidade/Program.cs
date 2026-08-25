@@ -15,7 +15,7 @@ Console.Write("Digite quantos pontos de fidelidade você tem: ");
 sistema.PontosFidelidade = double.Parse(Console.ReadLine());
 
 Console.Write("Digite o cupom de desconto (se houver): ");
-sistema.CupomDesconto = (Console.ReadLine() ?? "").ToUpper();
+sistema.CupomDesconto = Console.ReadLine().ToUpper();
 
 
 Console.WriteLine("\n --------------Ingresso--------------");
