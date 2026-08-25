@@ -1,15 +1,19 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.Design;
+using System.Text;
 
-namespace Sistema
-{
+
+namespace FestivalCidade
+{ 
 	class Sistema
 	{
 		public string NomeFa { get; set; } = string.Empty;
-		public int Dias { get; set; }
+        public int Dias { get; set; }
 		public double PontosFidelidade { get; set; }
-		public string CupomDesconto { get; set; }
+		public string CupomDesconto { get; set; } = string.Empty;
 
-		public double CalcularCustoBruto()
+        public double CalcularCustoBruto()
 		{
 			double Taxa = 15;
 			double CustoDia = 120;
@@ -21,9 +25,20 @@ namespace Sistema
 			{
 				return CalcularCustoBruto() - (CalcularCustoBruto() * 0.1);
 			}
-			else 
-			{ 
-				return CalcularCustoBruto()
+			else
+			{
+				return CalcularCustoBruto();
 			}
+		}
+		public bool AcessoVip()
+		{
+			if (Dias > 2 && PontosFidelidade >= 500)
+			{
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
 	}
 }
